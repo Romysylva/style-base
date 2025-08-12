@@ -1,0 +1,116 @@
+/* animations.scss - SB plugin animations */
+
+/* Keyframes */
+@keyframes sb-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes sb-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes sb-slide-up {
+  from {
+    transform: translateY(8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes sb-slide-down {
+  from {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes sb-zoom-in {
+  from {
+    transform: scale(0.98);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes sb-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+@keyframes sb-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
+}
+
+/* Utilities */
+.sb-anim {
+  animation-duration: 320ms;
+  animation-fill-mode: both;
+}
+.sb-anim-fast {
+  animation-duration: 180ms;
+}
+.sb-anim-slow {
+  animation-duration: 600ms;
+}
+
+.sb-fade-in {
+  animation-name: sb-fade-in;
+}
+.sb-fade-out {
+  animation-name: sb-fade-out;
+}
+.sb-slide-up {
+  animation-name: sb-slide-up;
+}
+.sb-slide-down {
+  animation-name: sb-slide-down;
+}
+.sb-zoom-in {
+  animation-name: sb-zoom-in;
+}
+.sb-bounce {
+  animation-name: sb-bounce;
+  animation-iteration-count: infinite;
+}
+.sb-shake {
+  animation-name: sb-shake;
+  animation-iteration-count: 1;
+}
+
+/* Hover helpers */
+.sb-hover-zoom:hover {
+  transform: translateZ(0) scale(1.03);
+  transition: transform 0.18s ease;
+}
+.sb-hover-rise:hover {
+  transform: translateY(-4px);
+  transition: transform 0.18s ease;
+}

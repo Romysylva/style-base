@@ -1,0 +1,80 @@
+/* Typography Base - sb-typography */
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  color: var(--sb-text-color, #333);
+  background-color: var(--sb-bg-color, #fff);
+}
+
+.sb-text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+.sb-text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.sb-text-base {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.sb-text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.sb-text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.sb-text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.sb-h1,
+.sb-h2,
+.sb-h3,
+.sb-h4,
+.sb-h5,
+.sb-h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.sb-h1 {
+  font-size: 2.5rem;
+}
+.sb-h2 {
+  font-size: 2rem;
+}
+.sb-h3 {
+  font-size: 1.75rem;
+}
+.sb-h4 {
+  font-size: 1.5rem;
+}
+.sb-h5 {
+  font-size: 1.25rem;
+}
+.sb-h6 {
+  font-size: 1rem;
+}
+
+.sb-text-sm {
+  font-size: 0.875rem;
+}
+.sb-text-lg {
+  font-size: 1.125rem;
+}
+.sb-text-center {
+  text-align: center;
+}
+.sb-text-right {
+  text-align: right;
+}
+.sb-text-left {
+  text-align: left;
+}

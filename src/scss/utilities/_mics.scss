@@ -1,0 +1,17 @@
+.sb-cursor-pointer {
+  cursor: pointer !important;
+}
+.sb-cursor-default {
+  cursor: default !important;
+}
+.sb-select-none {
+  user-select: none !important;
+}
+.sb-select-text {
+  user-select: text !important;
+}
+.sb-clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}

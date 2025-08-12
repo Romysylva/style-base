@@ -1,0 +1,49 @@
+@import "tokens";
+
+$space-values: 0 0.25 0.5 0.75 1 1.25 1.5 2 2.5 3 4 5 6 8 10 12 16 20 24;
+
+@each $step in $space-values {
+  $n: $step;
+  $val: #{$n}rem;
+  .sb-m-#{$n} {
+    margin: #{$val} !important;
+  }
+  .sb-mt-#{$n} {
+    margin-top: #{$val} !important;
+  }
+  .sb-mr-#{$n} {
+    margin-right: #{$val} !important;
+  }
+  .sb-mb-#{$n} {
+    margin-bottom: #{$val} !important;
+  }
+  .sb-ml-#{$n} {
+    margin-left: #{$val} !important;
+  }
+
+  .sb-p-#{$n} {
+    padding: #{$val} !important;
+  }
+  .sb-pt-#{$n} {
+    padding-top: #{$val} !important;
+  }
+  .sb-pr-#{$n} {
+    padding-right: #{$val} !important;
+  }
+  .sb-pb-#{$n} {
+    padding-bottom: #{$val} !important;
+  }
+  .sb-pl-#{$n} {
+    padding-left: #{$val} !important;
+  }
+
+  .sb-gap-#{$n} {
+    gap: #{$val} !important;
+  }
+  .sb-gap-x-#{$n} {
+    column-gap: #{$val} !important;
+  }
+  .sb-gap-y-#{$n} {
+    row-gap: #{$val} !important;
+  }
+}

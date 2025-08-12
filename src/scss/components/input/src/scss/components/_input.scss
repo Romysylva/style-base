@@ -1,0 +1,153 @@
+/* _input.scss - STYLE BASE (sb-) input component SCSS (source) */
+.sb-input {
+  --sb-input-bg: #fff;
+  --sb-input-border: #d1d5db;
+  --sb-input-focus: #2563eb;
+  --sb-input-radius: 0.5rem;
+  --sb-input-padding: 0.5rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  background: var(--sb-input-bg);
+  border: 1px solid var(--sb-input-border);
+  border-radius: var(--sb-input-radius);
+  padding: var(--sb-input-padding);
+  gap: 0.5rem;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.sb-input input,
+.sb-input textarea {
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  width: 100%;
+  padding: 0;
+}
+
+.sb-input:focus-within {
+  border-color: var(--sb-input-focus);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+}
+
+/* sizes */
+.sb-input--sm {
+  --sb-input-padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+.sb-input--lg {
+  --sb-input-padding: 0.75rem 1rem;
+  font-size: 1.125rem;
+}
+
+/* states */
+.sb-input--error {
+  border-color: #ef4444;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.06);
+}
+.sb-input--success {
+  border-color: #10b981;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.06);
+}
+.sb-input--disabled {
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+/* icon helpers */
+.sb-input__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.4rem;
+  height: 1.4rem;
+  color: var(--sb-input-border);
+}
+.sb-input--has-left .sb-input__icon {
+  margin-left: 0;
+}
+.sb-input--has-right .sb-input__icon {
+  margin-right: 0;
+}
+
+/* floating label */
+.sb-input--floating {
+  position: relative;
+  padding-top: 0.75rem;
+}
+.sb-input--floating label {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.6rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  pointer-events: none;
+  transition: transform 0.12s ease, font-size 0.12s ease, top 0.12s ease;
+  transform-origin: left top;
+}
+.sb-input--floating input:focus + label,
+.sb-input--floating input:not(:placeholder-shown) + label {
+  transform: translateY(-0.9rem) scale(0.85);
+  top: 0.2rem;
+  font-size: 0.75rem;
+  color: var(--sb-input-focus);
+}
+
+/* clear button */
+.sb-input__clear {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* file preview */
+.sb-file-preview {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.sb-file-preview img {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 0.375rem;
+  border: 1px solid #e5e7eb;
+}
+
+/* autocomplete list (basic) */
+.sb-autocomplete-list {
+  position: absolute;
+  z-index: 50;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  width: 100%;
+  margin-top: 0.25rem;
+  border-radius: 0.375rem;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  max-height: 12rem;
+  overflow: auto;
+}
+.sb-autocomplete-item {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+}
+.sb-autocomplete-item:hover,
+.sb-autocomplete-item[aria-selected="true"] {
+  background: #f3f4f6;
+}
+
+/* accessibility helpers */
+.sb-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

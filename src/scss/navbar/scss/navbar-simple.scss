@@ -1,0 +1,12 @@
+@use "variables" as *;
+@use "navbar-base";
+
+.sb-navbar.simple {
+  background: $sb-primary;
+  color: #fff;
+
+  .sb-brand,
+  .sb-nav-links a {
+    color: #fff;
+  }
+}

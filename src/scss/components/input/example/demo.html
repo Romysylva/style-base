@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Style Base - Inputs & Toasts Demo</title>
+    <link rel="stylesheet" href="../dist/style-base-inputs-toasts.css" />
+    <style>
+      body {
+        font-family: Inter, Arial, sans-serif;
+        padding: 1.5rem;
+        background: #f8fafc;
+      }
+      h2 {
+        margin-top: 1.25rem;
+      }
+      .row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Style Base — Inputs & Toasts Demo</h1>
+
+    <h2>Inputs</h2>
+    <div class="row">
+      <div>
+        <label>Default</label>
+        <div class="sb-input"><input placeholder=" " type="text" /></div>
+      </div>
+      <div>
+        <label>Floating label</label>
+        <div class="sb-input sb-input--floating">
+          <input placeholder=" " type="text" /><label>Full name</label>
+        </div>
+      </div>
+      <div>
+        <label>With left icon</label>
+        <div class="sb-input sb-input--has-left">
+          <span class="sb-input__icon">🔍</span
+          ><input placeholder=" " type="search" />
+        </div>
+      </div>
+      <div>
+        <label>With clear button</label>
+        <div class="sb-input">
+          <input placeholder=" " type="text" /><button
+            class="sb-input__clear"
+            aria-label="Clear"
+          >
+            ✕
+          </button>
+        </div>
+      </div>
+      <div>
+        <label>File upload preview</label>
+        <div class="sb-input sb-file-input">
+          <input type="file" multiple />
+          <div class="sb-file-preview"></div>
+        </div>
+      </div>
+      <div>
+        <label>Autocomplete</label>
+        <div
+          class="sb-input sb-autocomplete"
+          data-items="Apple, Banana, Cherry, Date, Fig, Grape, Kiwi"
+        >
+          <input placeholder=" " type="text" />
+        </div>
+      </div>
+    </div>
+
+    <h2>Toasts</h2>
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap">
+      <button id="t-success">Success</button>
+      <button id="t-error">Error</button>
+      <button id="t-warning">Warning</button>
+      <button id="t-info">Info</button>
+      <button id="t-stack">Stack 3</button>
+    </div>
+
+    <script type="module">
+      import { SBToast } from "../src/js/toast.js";
+      document.getElementById("t-success").addEventListener("click", () =>
+        SBToast.show({
+          title: "Saved",
+          message: "Your changes were saved",
+          variant: "success",
+          position: "sb-top-right",
+        })
+      );
+      document.getElementById("t-error").addEventListener("click", () =>
+        SBToast.show({
+          title: "Error",
+          message: "Something went wrong",
+          variant: "error",
+          position: "sb-top-right",
+        })
+      );
+      document.getElementById("t-warning").addEventListener("click", () =>
+        SBToast.show({
+          title: "Caution",
+          message: "Check your inputs",
+          variant: "warning",
+          position: "sb-top-right",
+        })
+      );
+      document.getElementById("t-info").addEventListener("click", () =>
+        SBToast.show({
+          title: "Info",
+          message: "Heads up",
+          variant: "info",
+          position: "sb-top-right",
+        })
+      );
+      document.getElementById("t-stack").addEventListener("click", () => {
+        SBToast.show({
+          title: "One",
+          message: "First",
+          variant: "neutral",
+          position: "sb-top-right",
+          timeout: 3000,
+        });
+        setTimeout(
+          () =>
+            SBToast.show({
+              title: "Two",
+              message: "Second",
+              variant: "info",
+              position: "sb-top-right",
+              timeout: 3000,
+            }),
+          200
+        );
+        setTimeout(
+          () =>
+            SBToast.show({
+              title: "Three",
+              message: "Third",
+              variant: "success",
+              position: "sb-top-right",
+              timeout: 3000,
+            }),
+          400
+        );
+      });
+    </script>
+
+    <script src="../src/js/input.js"></script>
+  </body>
+</html>

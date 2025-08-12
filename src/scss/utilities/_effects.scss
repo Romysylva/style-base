@@ -1,0 +1,36 @@
+@import "tokens";
+
+@each $name, $sh in $sb-shadows {
+  .sb-shadow-#{$name} {
+    box-shadow: #{$sh} !important;
+  }
+}
+
+@each $name, $r in $sb-radii {
+  .sb-rounded-#{$name} {
+    border-radius: #{$r} !important;
+  }
+}
+
+.sb-opacity-0 {
+  opacity: 0 !important;
+}
+.sb-opacity-25 {
+  opacity: 0.25 !important;
+}
+.sb-opacity-50 {
+  opacity: 0.5 !important;
+}
+.sb-opacity-75 {
+  opacity: 0.75 !important;
+}
+.sb-opacity-100 {
+  opacity: 1 !important;
+}
+
+.sb-transition {
+  transition: all 0.2s ease-in-out !important;
+}
+.sb-ease-linear {
+  transition-timing-function: linear !important;
+}

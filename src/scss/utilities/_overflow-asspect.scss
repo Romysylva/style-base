@@ -1,0 +1,21 @@
+.sb-overflow-auto {
+  overflow: auto !important;
+}
+.sb-overflow-hidden {
+  overflow: hidden !important;
+}
+.sb-scrollbar-thin {
+  scrollbar-width: thin;
+  -ms-overflow-style: none;
+}
+.sb-scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.sb-aspect-square {
+  aspect-ratio: 1 / 1 !important;
+}
+.sb-aspect-video {
+  aspect-ratio: 16 / 9 !important;
+}

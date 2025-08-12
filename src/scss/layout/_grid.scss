@@ -1,0 +1,32 @@
+/* sb-grid.scss */
+/* Responsive Grid System for Style Base Library */
+
+.sb-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.5rem;
+  margin-right: -0.5rem;
+}
+
+.sb-col {
+  flex: 1;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+@for $i from 1 through 12 {
+  .sb-col-#{$i} {
+    flex: 0 0 calc(100% / (12 / #{$i}));
+    max-width: calc(100% / (12 / #{$i}));
+  }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  @for $i from 1 through 12 {
+    .sb-col-sm-#{$i} {
+      flex: 0 0 calc(100% / (12 / #{$i}));
+      max-width: calc(100% / (12 / #{$i}));
+    }
+  }
+}

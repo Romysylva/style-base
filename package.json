@@ -1,0 +1,42 @@
+{
+  "name": "@promise_sylva/style-base",
+  "version": "1.0.0",
+  "description": "A modern, responsive, framework-agnostic UI component and utility library combining Tailwind CSS, MUI, and ShadCN-inspired styles.",
+  "main": "index.js",
+  "style": "index.css",
+  "scripts": {
+    "build": "vite build",
+    "test": "echo 'No tests yet'",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "ui",
+    "css",
+    "library",
+    "tailwind",
+    "mui",
+    "shadcn",
+    "components",
+    "frontend",
+    "style-base"
+  ],
+  "author": "Promise Sylva",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/promise-sylva/style-base.git"
+  },
+  "bugs": {
+    "url": "https://github.com/promise-sylva/style-base/issues"
+  },
+  "homepage": "https://github.com/promise-sylva/style-base#readme",
+  "peerDependencies": {
+    "chart.js": "^4.4.0",
+    "tailwindcss": "^3.4.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "postcss": "^8.4.21",
+    "vite": "^7.1.2"
+  }
+}

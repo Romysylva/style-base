@@ -1,0 +1,204 @@
+// _button.scss - Style Base Library
+
+// Breakpoints
+$breakpoints: (
+  sm: 480px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+);
+
+// Mixin for responsive
+@mixin responsive($property, $values) {
+  @each $break, $size in $breakpoints {
+    @if map-has-key($values, $break) {
+      @media (min-width: $size) {
+        #{$property}: map-get($values, $break);
+      }
+    }
+  }
+}
+
+// Base button styles
+.sb-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+
+  @include responsive(
+    font-size,
+    (
+      sm: 0.875rem,
+      md: 1rem,
+      lg: 1.125rem,
+    )
+  );
+  @include responsive(
+    padding,
+    (
+      sm: 0.5rem 1rem,
+      md: 0.75rem 1.25rem,
+      lg: 1rem 1.5rem,
+    )
+  );
+
+  &.sb-btn-primary {
+    background: #2563eb;
+    color: white;
+    &:hover {
+      background: #1d4ed8;
+    }
+  }
+
+  &.sb-btn-secondary {
+    background: #6b7280;
+    color: white;
+    &:hover {
+      background: #4b5563;
+    }
+  }
+
+  &.sb-btn-tertiary {
+    background: transparent;
+    color: #374151;
+    &:hover {
+      background: #f3f4f6;
+    }
+  }
+
+  &.sb-btn-outline {
+    background: transparent;
+    border: 2px solid currentColor;
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  &.sb-btn-ghost {
+    background: transparent;
+    color: #374151;
+    &:hover {
+      background: rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  &.sb-btn-soft {
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+    &:hover {
+      background: rgba(37, 99, 235, 0.2);
+    }
+  }
+
+  &.sb-btn-glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    &:hover {
+      background: rgba(255, 255, 255, 0.3);
+    }
+  }
+
+  &.sb-btn-gradient {
+    background: linear-gradient(90deg, #2563eb, #9333ea);
+    color: white;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &.sb-btn-shadow {
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    &:hover {
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  &.sb-btn-3d {
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 4px 0 #1e40af;
+    &:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #1e40af;
+    }
+  }
+
+  &.sb-btn-icon {
+    padding: 0.5rem;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.sb-btn-icon-text {
+    svg {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &.sb-btn-avatar {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px;
+    padding: 0.25rem 0.75rem;
+    img {
+      border-radius: 50%;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &.sb-btn-fab {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.sb-btn-link {
+    background: none;
+    color: #2563eb;
+    padding: 0;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &.sb-btn-loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.7;
+    &::after {
+      content: "";
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      border-top-color: white;
+      border-radius: 50%;
+      width: 1rem;
+      height: 1rem;
+      position: absolute;
+      right: 0.75rem;
+      animation: spin 1s linear infinite;
+    }
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,31 @@
+$palettes: (
+  primary: var(--sb-primary, #6b46c1),
+  secondary: var(--sb-secondary, #9f7aea),
+  success: var(--sb-success, #10b981),
+  danger: var(--sb-danger, #ef4444),
+  warning: var(--sb-warning, #f59e0b),
+  info: var(--sb-info, #0ea5e9),
+  light: var(--sb-light, #f8fafc),
+  dark: var(--sb-dark, #0f172a),
+  text: var(--sb-text, #111827),
+  muted: var(--sb-muted, #6b7280),
+);
+
+@each $name, $value in $palettes {
+  .sb-text-#{$name} {
+    color: #{$value} !important;
+  }
+  .sb-bg-#{$name} {
+    background-color: #{$value} !important;
+  }
+  .sb-border-#{$name} {
+    border-color: #{$value} !important;
+  }
+}
+
+.sb-fill-primary {
+  fill: var(--sb-primary, #6b46c1) !important;
+}
+.sb-stroke-primary {
+  stroke: var(--sb-primary, #6b46c1) !important;
+}

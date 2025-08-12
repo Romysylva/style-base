@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Style Base — User Dashboard (Settings)</title>
+    <link rel="stylesheet" href="src/scss/layout/user-dashboard.css" />
+    <style>
+      body {
+        font-family: Inter, Arial, sans-serif;
+        background: #f3f4f6;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body class="sb-light">
+    <div class="sb-topbar">
+      <div class="container sb-topbar-inner">
+        <div class="sb-brand">StyleBase</div>
+        <div class="sb-topbar-actions">
+          <input
+            class="sb-input sb-input--sm"
+            placeholder="Search..."
+            aria-label="Search"
+          />
+          <button id="themeToggle" class="sb-btn sb-btn--outline">
+            Toggle Theme
+          </button>
+          <div class="sb-avatar sb-avatar--sm" title="You">
+            <img src="https://placekitten.com/80/80" alt="avatar" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main
+      class="container"
+      style="max-width: 1200px; margin: 1rem auto; padding: 1rem"
+    >
+      <div class="sb-grid sb-mt-6">
+        <!-- Left column: profile & actions -->
+        <div class="sb-col-4">
+          <section class="card">
+            <div class="card-header"><h3>Your profile</h3></div>
+            <div class="card-body">
+              <div class="profile-compact">
+                <div class="sb-avatar sb-avatar--lg" id="avatarPreview">
+                  <img src="https://placekitten.com/160/160" alt="avatar" />
+                </div>
+                <h4 id="userName">Jane Doe</h4>
+                <p class="muted">Member since Jan 2024</p>
+              </div>
+
+              <div class="quick-actions sb-mt-4">
+                <button class="sb-btn sb-btn--primary sb-btn--block">
+                  Create new item
+                </button>
+                <button class="sb-btn sb-btn--outline sb-mt-2 sb-btn--block">
+                  Manage subscriptions
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="card sb-mt-4">
+            <div class="card-header"><h4>Account activity</h4></div>
+            <div class="card-body">
+              <ul class="activity-list">
+                <li>Logged in from Lagos — 2 hours ago</li>
+                <li>Password changed — 2 days ago</li>
+                <li>Paid invoice #1234 — 1 week ago</li>
+              </ul>
+            </div>
+          </section>
+        </div>
+
+        <!-- Right column: single-page settings -->
+        <div class="sb-col-8">
+          <section class="card">
+            <div class="card-header"><h3>Settings</h3></div>
+            <div class="card-body">
+              <!-- Profile section -->
+              <div class="settings-section" id="profileSection">
+                <h4>Profile</h4>
+                <form id="profileForm">
+                  <div class="form-row">
+                    <label for="name">Full name</label>
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      class="sb-input"
+                      placeholder=" "
+                      value="Jane Doe"
+                    />
+                  </div>
+                  <div class="form-row">
+                    <label for="email">Email</label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      class="sb-input"
+                      placeholder=" "
+                      value="jane@example.com"
+                    />
+                  </div>
+                  <div class="form-row">
+                    <label>Avatar</label>
+                    <div class="sb-file-input">
+                      <input type="file" accept="image/*" id="avatarInput" />
+                      <div class="sb-file-preview" id="avatarPreviewList"></div>
+                    </div>
+                    <p class="muted">Accepted: JPG, PNG. Max 2MB.</p>
+                  </div>
+                  <div class="form-row">
+                    <label for="bio">Bio</label>
+                    <textarea
+                      id="bio"
+                      name="bio"
+                      class="sb-input"
+                      rows="4"
+                      placeholder="Tell us about yourself"
+                    >
+Hello — I build products.</textarea
+                    >
+                  </div>
+                </form>
+              </div>
+
+              <!-- Security section -->
+              <div class="settings-section sb-mt-6" id="securitySection">
+                <h4>Security</h4>
+                <form id="securityForm">
+                  <div class="form-row">
+                    <label for="currentPassword">Current password</label>
+                    <div class="sb-input sb-input--has-right">
+                      <input
+                        id="currentPassword"
+                        type="password"
+                        placeholder=" "
+                      />
+                      <button
+                        type="button"
+                        class="sb-input__clear"
+                        data-toggle="#currentPassword"
+                      >
+                        Show
+                      </button>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <label for="newPassword">New password</label>
+                    <div class="sb-input sb-input--has-right">
+                      <input id="newPassword" type="password" placeholder=" " />
+                      <button
+                        type="button"
+                        class="sb-input__clear"
+                        data-toggle="#newPassword"
+                      >
+                        Show
+                      </button>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <label for="confirmPassword">Confirm password</label>
+                    <input
+                      id="confirmPassword"
+                      type="password"
+                      class="sb-input"
+                      placeholder=" "
+                    />
+                  </div>
+                </form>
+                <div class="sb-mt-3">
+                  <button id="changePasswordBtn" class="sb-btn sb-btn--primary">
+                    Change password
+                  </button>
+                </div>
+              </div>
+
+              <!-- Preferences / Notifications -->
+              <div class="settings-section sb-mt-6" id="prefsSection">
+                <h4>Preferences</h4>
+                <div class="form-row">
+                  <label>Theme</label>
+                  <select id="themeSelect" class="sb-input">
+                    <option value="system">System</option>
+                    <option value="light" selected>Light</option>
+                    <option value="dark">Dark</option>
+                  </select>
+                </div>
+
+                <h4 class="sb-mt-4">Notifications</h4>
+                <div class="form-row toggles">
+                  <label
+                    ><input type="checkbox" id="emailNotif" checked /> Email
+                    notifications</label
+                  ><br />
+                  <label
+                    ><input type="checkbox" id="smsNotif" /> SMS
+                    notifications</label
+                  ><br />
+                  <label
+                    ><input type="checkbox" id="pushNotif" checked /> Push
+                    notifications</label
+                  >
+                </div>
+              </div>
+
+              <!-- Two-factor and critical actions -->
+              <div class="settings-section sb-mt-6" id="security2fa">
+                <h4>Two-factor authentication</h4>
+                <div class="form-row">
+                  <label
+                    ><input type="checkbox" id="toggle2fa" /> Enable two-factor
+                    authentication</label
+                  >
+                  <p class="muted">
+                    When enabled you'll be asked for a code on login.
+                  </p>
+                </div>
+                <hr />
+                <div class="form-row">
+                  <label>Danger zone</label>
+                  <div class="danger-actions">
+                    <button id="deactivateBtn" class="sb-btn sb-btn--outline">
+                      Deactivate account
+                    </button>
+                    <button id="deleteBtn" class="sb-btn sb-btn--danger">
+                      Delete account
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sb-mt-6">
+                <button id="saveAll" class="sb-btn sb-btn--primary">
+                  Save changes
+                </button>
+                <button id="resetBtn" class="sb-btn sb-btn--outline sb-ml-2">
+                  Reset
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <script type="module" src="src/js/user-dashboard.js"></script>
+  </body>
+</html>

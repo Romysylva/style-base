@@ -1,0 +1,12 @@
+// Collapsible Sidebar
+.sb-sidebar-collapsible {
+  @extend .sb-sidebar;
+
+  &.sb-collapsed {
+    width: 80px;
+
+    .sb-sidebar__nav li span {
+      display: none;
+    }
+  }
+}

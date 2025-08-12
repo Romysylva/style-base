@@ -1,0 +1,71 @@
+/* forms.scss - SB form styles & layouts */
+
+/* Base input wrapper */
+.sb-form {
+  display: block;
+  width: 100%;
+}
+.sb-form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Labels and help */
+.sb-form-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--sb-text-color);
+}
+.sb-form-help {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Field styles */
+.sb-field {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--sb-border-color);
+  border-radius: 0.5rem;
+  background: var(--sb-bg-color);
+  color: var(--sb-text-color);
+  width: 100%;
+}
+.sb-field:focus {
+  border-color: var(--sb-primary-color);
+  box-shadow: 0 6px 18px rgba(37, 99, 235, 0.08);
+  outline: none;
+}
+
+/* checkboxes & radios */
+.sb-checkbox,
+.sb-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+.sb-checkbox input,
+.sb-radio input {
+  width: 16px;
+  height: 16px;
+}
+
+/* inline form */
+.sb-form-inline {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* validation */
+.sb-field--error {
+  border-color: #ef4444;
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.06);
+}
+.sb-field--success {
+  border-color: #10b981;
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.06);
+}

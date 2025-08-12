@@ -1,0 +1,17 @@
+@use "variables" as *;
+@use "navbar-base";
+
+.sb-search {
+  display: flex;
+  align-items: center;
+  background: #f9fafb;
+  border-radius: $sb-radius;
+  padding: 0.25rem 0.5rem;
+
+  input {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0.25rem;
+  }
+}

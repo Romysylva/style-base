@@ -1,0 +1,12 @@
+@use "sass:map";
+
+@function sb-breakpoint($key) {
+  @return map.get($sb-breakpoints, $key);
+}
+
+@mixin sb-up($point) {
+  $val: sb-breakpoint($point);
+  @media (min-width: $val) {
+    @content;
+  }
+}

@@ -1,0 +1,25 @@
+@use "variables" as *;
+@use "navbar-base";
+
+@media (max-width: 768px) {
+  .sb-nav-links {
+    display: none;
+    flex-direction: column;
+    background: $sb-surface;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+  }
+
+  .sb-nav-links.show {
+    display: flex;
+  }
+
+  .sb-menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+  }
+}

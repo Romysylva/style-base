@@ -1,0 +1,14 @@
+/* Responsive notes:
+   Generating full responsive-prefixed copies for every utility is intentionally omitted
+   to keep the distributed CSS size reasonable. Use the SASS mixin `@include sb-up('md')`
+   in component SCSS to apply breakpoint-specific rules, or run an optional PostCSS step
+   to produce responsive variants for a selected subset of utilities.
+*/
+
+@import "tokens";
+
+@each $bp-name, $bp-val in $sb-breakpoints {
+  @media (min-width: $bp-val) {
+    /* place custom responsive helpers here if needed */
+  }
+}

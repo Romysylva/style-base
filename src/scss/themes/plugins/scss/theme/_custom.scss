@@ -1,0 +1,61 @@
+// src/themes/custom-theme.scss
+
+// 1️⃣ Import default tokens
+@use "../tokens/tokens" as *;
+@use "../../../../../tokens/tokens" as *;
+
+// 2️⃣ Define a SCSS map for theme values (defaults)
+$sb-theme: (
+  surface: $sb-surface,
+  text: $sb-text,
+  muted: $sb-muted,
+  primary: $sb-primary,
+  radii: $sb-radii,
+) !default;
+
+// 3️⃣ Allow user overrides via !default
+$sb-surface: map-get($sb-theme, surface) !default;
+$sb-text: map-get($sb-theme, text) !default;
+$sb-muted: map-get($sb-theme, muted) !default;
+$sb-primary: map-get($sb-theme, primary) !default;
+$sb-radii: map-get($sb-theme, radii) !default;
+
+// 4️⃣ Generate light mode CSS variables
+:root {
+  --sb-surface: #{$sb-surface};
+  --sb-text: #{$sb-text};
+  --sb-muted: #{$sb-muted};
+  --sb-primary: #{$sb-primary};
+  --sb-radii: #{$sb-radii};
+}
+
+// 5️⃣ Dark mode overrides (can be toggled via .dark-theme class)
+.dark-theme {
+  --sb-surface: #0f172a;
+  --sb-text: #f8fafc;
+  --sb-muted: #94a3b8;
+  --sb-primary: #38bdf8;
+}
+
+// 6️⃣ Base global styles using the variables
+body {
+  background-color: var(--sb-surface);
+  color: var(--sb-text);
+}
+
+// Example component styles using variables
+.sb-button {
+  background-color: var(--sb-primary);
+  border-radius: var(--sb-radii);
+  color: #fff;
+
+  &:hover {
+    background-color: lighten(var(--sb-primary), 8%);
+  }
+}
+
+.sb-card {
+  background-color: var(--sb-surface);
+  border-radius: var(--sb-radii);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}

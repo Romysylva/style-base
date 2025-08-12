@@ -1,0 +1,29 @@
+.sb-hidden {
+  display: none !important;
+}
+.sb-visible {
+  visibility: visible !important;
+}
+.sb-invisible {
+  visibility: hidden !important;
+}
+
+.sb-relative {
+  position: relative !important;
+}
+.sb-absolute {
+  position: absolute !important;
+}
+.sb-fixed {
+  position: fixed !important;
+}
+.sb-sticky {
+  position: sticky !important;
+  top: 0 !important;
+}
+
+@each $k, $z in $sb-z {
+  .sb-z-#{$k} {
+    z-index: #{$z} !important;
+  }
+}

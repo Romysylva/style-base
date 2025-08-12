@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SB Modal Examples</title>
+    <link rel="stylesheet" href="../src/scss/components/_modal.scss" />
+    <style>
+      /* minimal demo helpers */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 2rem;
+        background: #f4f6f8;
+      }
+      .demo-btn {
+        margin: 0.25rem;
+        padding: 0.5rem 0.75rem;
+        border-radius: 6px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Modal Examples</h1>
+    <button class="demo-btn" id="openBasic">Open Basic Modal</button>
+    <button class="demo-btn" id="openCentered">Open Centered Modal</button>
+    <button class="demo-btn" id="openFullscreen">Open Fullscreen Modal</button>
+    <button class="demo-btn" id="openSlideRight">Open Slide Right</button>
+    <button class="demo-btn" id="openSlideLeft">Open Slide Left</button>
+    <button class="demo-btn" id="openForm">Open Form Modal</button>
+    <button class="demo-btn" id="openMedia">Open Media Preview</button>
+    <button class="demo-btn" id="openDraggable">Open Draggable Modal</button>
+
+    <!-- Basic modal -->
+    <div class="sb-modal sb-modal--fade" id="basicModal" aria-hidden="true">
+      <div class="sb-modal__backdrop"></div>
+      <div
+        class="sb-modal__dialog sb-modal__dialog--sm"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="basic-title"
+      >
+        <div class="sb-modal__header">
+          <div class="sb-modal__title" id="basic-title">Basic Modal</div>
+          <button
+            class="sb-modal__close"
+            data-sb-modal-close
+            aria-label="Close"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="sb-modal__body">
+          <p>This is a basic modal.</p>
+        </div>
+        <div class="sb-modal__footer">
+          <button data-sb-modal-close>Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Centered modal (same as basic - default centered) -->
+    <div class="sb-modal sb-modal--fade" id="centeredModal" aria-hidden="true">
+      <div class="sb-modal__backdrop"></div>
+      <div
+        class="sb-modal__dialog sb-modal__dialog--lg"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="centered-title"
+      >
+        <div class="sb-modal__header">
+          <div class="sb-modal__title" id="centered-title">Centered Modal</div>
+          <button
+            class="sb-modal__close"
+            data-sb-modal-close
+            aria-label="Close"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="sb-modal__body">
+          <p>Centered dialog content.</p>
+        </div>
+        <div class="sb-modal__footer">
+          <button data-sb-modal-close>Dismiss</button>
+          <button>Action</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fullscreen modal -->
+    <div
+      class="sb-modal sb-modal--fade sb-modal--fullscreen"
+      id="fullscreenModal"
+      aria-hidden="true"
+    >
+      <div class="sb-modal__backdrop"></div>
+      <div
+        class="sb-modal__dialog sb-modal__dialog--fullscreen"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="full-title"
+      >
+        <div class="sb-modal__header">
+          <div class="sb-modal__title" id="full-title">Fullscreen Modal</div>
+          <button
+            class="sb-modal__close"
+            data-sb-modal-close
+            aria-label="Close"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="sb-modal__body">
+          <p>Fullscreen content — media, maps, editors, etc.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide right modal (drawer) -->
+    <div
+      class="sb-modal sb-modal--slide-right"
+      id="slideRightModal"
+      aria-hidden="true"
+    >
+      <div class="sb-modal__backdrop"></div>
+      <div
+        class="sb-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="sr-title"
+      >
+        <div class="sb-modal__header">
+          <div class="sb-modal__title" id="sr-title">Slide Right Drawer</div>
+          <button
+            class="sb-modal__close"
+            data-sb-modal-close
+            aria-label="Close"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="sb-modal__body">
+          <p>Right-side drawer content.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide left modal (drawer) -->
+    <div
+      class="sb-modal sb-modal--slide-left"
+      id="slideLeftModal"
+      aria-hidden="true"
+    >
+      <div class="sb-modal__backdrop"></div>
+      <div
+        class="sb-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="sl-title"
+      >
+        <div class="sb-modal__header">
+          <div class="sb-modal__title" id="sl-title">Slide Left Drawer</div>
+          <button
+            class="sb-modal__close"
+            data-sb-modal-close
+            aria-label="Close"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="sb-modal__body">
+          <p>Left-side drawer content.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form modal -->
+    <div
+      class="sb-modal sb-modal--form sb-modal--fade"
+      id="formModal"
+      aria-hidden="true"
+    >
+      <div class="sb-modal__backdrop"></div>
+      <div
+        class="sb-modal__dialog sb-modal__dialog--sm"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="form-title"
+      >
+        <div class="sb-modal__header">
+          <div class="sb-modal__title" id="form-title">Modal Form</div>
+          <button
+            class="sb-modal__close"
+            data-sb-modal-close
+            aria-label="Close"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="sb-modal__body">
+          <form
+            class="sb-modal__form"
+            onsubmit="event.preventDefault(); alert('Submitted');"
+          >
+            <div class="sb-modal__form-row">
+              <label>Name</label><br />
+              <input type="text" required />
+            </div>
+            <div class="sb-modal__form-row">
+              <label>Email</label><br />
+              <input type="email" required />
+            </div>
+            <div class="sb-modal__form-row">
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Media preview modal -->
+    <div
+      class="sb-modal sb-modal--media sb-modal--fade"
+      id="mediaModal"
+      aria-hidden="true"
+    >
+      <div class="sb-modal__backdrop"></div>
+      <div
+        class="sb-modal__dialog sb-modal__dialog--lg"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="media-title"
+      >
+        <div class="sb-modal__header">
+          <div class="sb-modal__title" id="media-title">Media Preview</div>
+          <button
+            class="sb-modal__close"
+            data-sb-modal-close
+            aria-label="Close"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="sb-modal__body">
+          <img src="https://placekitten.com/800/450" alt="Preview image" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Draggable modal -->
+    <div
+      class="sb-modal sb-modal--fade sb-modal--draggable"
+      id="dragModal"
+      aria-hidden="true"
+    >
+      <div class="sb-modal__backdrop"></div>
+      <div
+        class="sb-modal__dialog sb-modal__dialog--lg"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="drag-title"
+      >
+        <div class="sb-modal__header">
+          <div class="sb-modal__title" id="drag-title">Draggable Modal</div>
+          <button
+            class="sb-modal__close"
+            data-sb-modal-close
+            aria-label="Close"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="sb-modal__body">
+          <p>Drag me by the header or use keyboard to interact.</p>
+          <input placeholder="Focus me on open" />
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import { SBModal } from "../src/plugins/modal.js";
+
+      const basic = new SBModal("#basicModal", { draggable: false });
+      const centered = new SBModal("#centeredModal", { draggable: false });
+      const fullscreen = new SBModal("#fullscreenModal", { draggable: false });
+      const sr = new SBModal("#slideRightModal", { draggable: false });
+      const sl = new SBModal("#slideLeftModal", { draggable: false });
+      const form = new SBModal("#formModal", { draggable: false });
+      const media = new SBModal("#mediaModal", { draggable: false });
+      const drag = new SBModal("#dragModal", { draggable: true });
+
+      document
+        .getElementById("openBasic")
+        .addEventListener("click", () => basic.open());
+      document
+        .getElementById("openCentered")
+        .addEventListener("click", () => centered.open());
+      document
+        .getElementById("openFullscreen")
+        .addEventListener("click", () => fullscreen.open());
+      document
+        .getElementById("openSlideRight")
+        .addEventListener("click", () => sr.open());
+      document
+        .getElementById("openSlideLeft")
+        .addEventListener("click", () => sl.open());
+      document
+        .getElementById("openForm")
+        .addEventListener("click", () => form.open());
+      document
+        .getElementById("openMedia")
+        .addEventListener("click", () => media.open());
+      document
+        .getElementById("openDraggable")
+        .addEventListener("click", () => drag.open());
+    </script>
+  </body>
+</html>

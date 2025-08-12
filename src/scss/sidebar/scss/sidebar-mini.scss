@@ -1,0 +1,17 @@
+// Mini Sidebar
+.sb-sidebar-mini {
+  @extend .sb-sidebar;
+  width: 80px;
+  overflow: hidden;
+
+  .sb-sidebar__nav li span {
+    display: none;
+  }
+
+  &:hover {
+    width: 260px;
+    .sb-sidebar__nav li span {
+      display: inline;
+    }
+  }
+}

@@ -1,0 +1,120 @@
+/* _toast.scss - STYLE BASE (sb-) toast component SCSS (source) */
+.sb-toast-wrapper {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.sb-toast-wrapper.sb-top-right {
+  top: 1rem;
+  right: 1rem;
+}
+.sb-toast-wrapper.sb-top-left {
+  top: 1rem;
+  left: 1rem;
+}
+.sb-toast-wrapper.sb-bottom-right {
+  bottom: 1rem;
+  right: 1rem;
+}
+.sb-toast-wrapper.sb-bottom-left {
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.sb-toast {
+  pointer-events: auto;
+  min-width: 220px;
+  max-width: 360px;
+  background: #111827;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  transform-origin: right top;
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  transform: translateY(-8px) scale(0.98);
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.18s ease;
+}
+
+.sb-toast.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.sb-toast .sb-toast__icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 22px;
+}
+.sb-toast .sb-toast__content {
+  flex: 1;
+}
+.sb-toast .sb-toast__title {
+  font-weight: 600;
+  margin-bottom: 0.125rem;
+}
+.sb-toast .sb-toast__msg {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* variants */
+.sb-toast--success {
+  background: linear-gradient(90deg, #059669, #10b981);
+  color: #fff;
+}
+.sb-toast--error {
+  background: linear-gradient(90deg, #ef4444, #f97316);
+  color: #fff;
+}
+.sb-toast--warning {
+  background: linear-gradient(90deg, #f59e0b, #f97316);
+  color: #111827;
+}
+.sb-toast--info {
+  background: linear-gradient(90deg, #0ea5e9, #3b82f6);
+  color: #fff;
+}
+.sb-toast--neutral {
+  background: #111827;
+  color: #fff;
+}
+
+.sb-toast .sb-toast__close {
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+}
+
+/* stacking */
+.sb-toast-stack {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* small responsive tweak */
+@media (max-width: 640px) {
+  .sb-toast {
+    width: calc(100vw - 2rem);
+    max-width: none;
+    border-radius: 0.5rem;
+  }
+  .sb-toast-wrapper.sb-top-right,
+  .sb-toast-wrapper.sb-top-left {
+    left: 0.5rem;
+    right: 0.5rem;
+    top: 0.5rem;
+  }
+}

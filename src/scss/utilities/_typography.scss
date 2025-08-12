@@ -1,0 +1,50 @@
+.sb-text-xs {
+  font-size: 0.75rem !important;
+}
+.sb-text-sm {
+  font-size: 0.875rem !important;
+}
+.sb-text-base {
+  font-size: 1rem !important;
+}
+.sb-text-lg {
+  font-size: 1.125rem !important;
+}
+.sb-text-xl {
+  font-size: 1.25rem !important;
+}
+.sb-text-2xl {
+  font-size: 1.5rem !important;
+}
+.sb-text-3xl {
+  font-size: 1.875rem !important;
+}
+.sb-text-4xl {
+  font-size: 2.25rem !important;
+}
+
+.sb-leading-none {
+  line-height: 1 !important;
+}
+.sb-leading-tight {
+  line-height: 1.25 !important;
+}
+.sb-leading-normal {
+  line-height: 1.5 !important;
+}
+
+.sb-tracking-tight {
+  letter-spacing: -0.025em !important;
+}
+.sb-tracking-normal {
+  letter-spacing: 0 !important;
+}
+.sb-tracking-wide {
+  letter-spacing: 0.025em !important;
+}
+
+.sb-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,221 @@
+/* src/scss/components/_modal.scss */
+/* Style Base - Modal Component (sb-modal) */
+
+.sb-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1100;
+  pointer-events: none;
+  font-family: inherit;
+}
+
+.sb-modal.sb-open {
+  display: flex;
+  pointer-events: auto;
+}
+
+/* Backdrop */
+.sb-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  transition: opacity 0.25s ease;
+}
+
+/* Dialog */
+.sb-modal__dialog {
+  position: relative;
+  background: var(--sb-surface, #fff);
+  color: var(--sb-text, #111827);
+  border-radius: 0.5rem;
+  width: min(96%, 720px);
+  max-height: 90vh;
+  overflow: auto;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  pointer-events: auto;
+}
+
+/* dialog sizes */
+.sb-modal__dialog--sm {
+  max-width: 360px;
+}
+.sb-modal__dialog--lg {
+  max-width: 960px;
+}
+.sb-modal__dialog--fullscreen {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  border-radius: 0;
+}
+
+/* header body footer */
+.sb-modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  cursor: default;
+  user-select: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.sb-modal__title {
+  font-weight: 600;
+  font-size: 1.125rem;
+}
+.sb-modal__close {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.sb-modal__body {
+  padding: 1rem;
+}
+.sb-modal__footer {
+  padding: 0.75rem 1rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+/* draggable handle indicator */
+.sb-modal__handle {
+  width: 36px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.08);
+  margin: 0.5rem auto 0;
+}
+
+/* Variants */
+
+/* Centered (default) - fade */
+.sb-modal--fade .sb-modal__dialog {
+  animation: sb-fade-in 0.24s ease forwards;
+}
+
+@keyframes sb-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Slide-in right (drawer) */
+.sb-modal--slide-right .sb-modal__dialog {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: min(92%, 420px);
+  border-radius: 0 0 0 0.5rem;
+  transform: translateX(100%);
+  animation: sb-slide-in-right 0.28s ease forwards;
+}
+@keyframes sb-slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Slide-in left */
+.sb-modal--slide-left .sb-modal__dialog {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: min(92%, 420px);
+  border-radius: 0 0.5rem 0.5rem 0;
+  transform: translateX(-100%);
+  animation: sb-slide-in-left 0.28s ease forwards;
+}
+@keyframes sb-slide-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Form modal tweaks */
+.sb-modal--form .sb-modal__body {
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+.sb-modal__form-row {
+  margin-bottom: 0.75rem;
+}
+
+/* Media preview */
+.sb-modal--media .sb-modal__body {
+  padding: 0;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sb-modal--media img,
+.sb-modal--media video {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+}
+
+/* Fullscreen specific */
+.sb-modal--fullscreen .sb-modal__dialog {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  border-radius: 0;
+}
+
+/* Draggable specific */
+.sb-modal--draggable .sb-modal__header {
+  cursor: grab;
+}
+.sb-modal--draggable .sb-modal__header:active {
+  cursor: grabbing;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .sb-modal__dialog {
+    width: 95%;
+    max-height: 94vh;
+  }
+  .sb-modal--slide-right .sb-modal__dialog,
+  .sb-modal--slide-left .sb-modal__dialog {
+    width: 92vw;
+  }
+}
+
+/* Dark mode */
+.sb-dark {
+  .sb-modal__dialog {
+    background: #0b1220;
+    color: #f3f4f6;
+    border-color: rgba(255, 255, 255, 0.04);
+  }
+  .sb-modal__header,
+  .sb-modal__footer {
+    border-color: rgba(255, 255, 255, 0.04);
+  }
+}

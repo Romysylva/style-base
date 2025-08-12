@@ -1,0 +1,51 @@
+/* icons.scss - SB icon utilities */
+
+/* Sizes */
+.sb-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+.sb-icon-sm {
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+}
+.sb-icon-md {
+  width: 20px;
+  height: 20px;
+  font-size: 16px;
+}
+.sb-icon-lg {
+  width: 28px;
+  height: 28px;
+  font-size: 20px;
+}
+
+/* Alignment */
+.sb-icon-inline {
+  vertical-align: middle;
+}
+.sb-icon-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background variants */
+.sb-icon-circle {
+  border-radius: 9999px;
+  padding: 6px;
+}
+.sb-icon-square {
+  padding: 6px;
+  border-radius: 6px;
+}
+
+/* SVG friendly */
+.sb-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

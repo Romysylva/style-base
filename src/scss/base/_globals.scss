@@ -1,0 +1,33 @@
+/* Global Styles - sb-globals */
+:root {
+  --sb-primary: #007bff;
+  --sb-secondary: #6c757d;
+  --sb-success: #28a745;
+  --sb-danger: #dc3545;
+  --sb-warning: #ffc107;
+  --sb-info: #17a2b8;
+  --sb-light: #f8f9fa;
+  --sb-dark: #343a40;
+  --sb-text-color: #333;
+  --sb-bg-color: #fff;
+}
+
+body {
+  background-color: var(--sb-bg-color);
+  color: var(--sb-text-color);
+}
+
+a {
+  color: var(--sb-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.sb-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

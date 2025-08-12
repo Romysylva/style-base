@@ -1,0 +1,131 @@
+// src/scss/components/_user-dashboard.scss
+
+// Import theme variables
+@use "../utilities/colors" as *;
+@use "../utilities/spacing" as *;
+@use "../utilities/effects" as *;
+
+// Dashboard variables
+$sb-surface: #fff;
+$sb-text: #111827;
+$sb-muted: #6b7280;
+$sb-primary: #2563eb;
+$sb-radius: 0.5rem;
+
+:root {
+  --sb-surface: #{$sb-surface};
+  --sb-text: #{$sb-text};
+  --sb-muted: #{$sb-muted};
+  --sb-primary: #{$sb-primary};
+  --sb-radius: #{$sb-radius};
+}
+
+.sb-topbar {
+  background: var(--sb-surface);
+  border-bottom: 1px solid lighten($sb-muted, 45%);
+  padding: 0.5rem 0;
+
+  &-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+}
+
+.sb-brand {
+  font-weight: 700;
+  color: var(--sb-text);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.sb-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+
+  @media (min-width: 900px) {
+    grid-template-columns: 320px 1fr;
+  }
+}
+
+.card {
+  background: var(--sb-surface);
+  border-radius: var(--sb-radius);
+  box-shadow: 0 6px 20px rgba(16, 24, 40, 0.04);
+  border: 1px solid rgba(15, 23, 42, 0.03);
+  overflow: hidden;
+
+  &-header {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  }
+
+  &-body {
+    padding: 1rem;
+  }
+}
+
+.profile-compact {
+  text-align: center;
+  padding: 0.5rem;
+
+  .sb-avatar--lg {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+}
+
+.muted {
+  color: var(--sb-muted);
+  font-size: 0.95rem;
+}
+
+.form-row {
+  margin-bottom: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+
+  label {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  input.sb-input,
+  textarea.sb-input,
+  select.sb-input {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    border: 1px solid lighten($sb-muted, 45%);
+    background: $sb-surface;
+  }
+}
+
+.danger-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.sb-mt-6 {
+  margin-top: 1.5rem;
+}
+.sb-mt-4 {
+  margin-top: 1rem;
+}
+.sb-ml-2 {
+  margin-left: 0.5rem;
+}

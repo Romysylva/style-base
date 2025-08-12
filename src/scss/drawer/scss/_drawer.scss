@@ -1,0 +1,46 @@
+.sb-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background: var(--sb-surface, #fff);
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 100;
+
+  &.open {
+    transform: translateX(0);
+  }
+
+  @media (min-width: 900px) {
+    transform: none;
+    position: relative;
+    box-shadow: none;
+  }
+}
+
+.sb-drawer-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+
+  &.visible {
+    display: block;
+  }
+
+  @media (min-width: 900px) {
+    display: none !important;
+  }
+}
+
+.sb-drawer-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 101;
+}

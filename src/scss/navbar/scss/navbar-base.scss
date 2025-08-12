@@ -1,0 +1,32 @@
+@use "variables" as *;
+
+.sb-navbar {
+  background: $sb-surface;
+  border-bottom: 1px solid #e6eef8;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sb-brand {
+  font-weight: 700;
+  color: $sb-text;
+  font-size: 1.25rem;
+}
+
+.sb-nav-links {
+  display: flex;
+  gap: 1rem;
+
+  a {
+    color: $sb-text;
+    text-decoration: none;
+    padding: 0.5rem;
+    border-radius: $sb-radius;
+
+    &:hover {
+      background: #f3f4f6;
+    }
+  }
+}
