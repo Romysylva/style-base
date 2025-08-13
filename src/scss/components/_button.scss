@@ -1,3 +1,4 @@
+@use "sass:map";
 // _button.scss - Style Base Library
 
 // Breakpoints
@@ -11,9 +12,9 @@ $breakpoints: (
 // Mixin for responsive
 @mixin responsive($property, $values) {
   @each $break, $size in $breakpoints {
-    @if map-has-key($values, $break) {
+    @if map.has-key($values, $break) {
       @media (min-width: $size) {
-        #{$property}: map-get($values, $break);
+        #{$property}: map.get($values, $break);
       }
     }
   }

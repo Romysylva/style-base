@@ -3,13 +3,13 @@
   --sb-input-bg: #fff;
   --sb-input-border: #d1d5db;
   --sb-input-focus: #2563eb;
-  --sb-input-radius: 0.5rem;
+  --sb-input-radii: 0.5rem;
   --sb-input-padding: 0.5rem 0.75rem;
   display: inline-flex;
   align-items: center;
   background: var(--sb-input-bg);
   border: 1px solid var(--sb-input-border);
-  border-radius: var(--sb-input-radius);
+  border-radius: var(--sb-input-radii);
   padding: var(--sb-input-padding);
   gap: 0.5rem;
   transition: border-color 0.18s ease, box-shadow 0.18s ease;

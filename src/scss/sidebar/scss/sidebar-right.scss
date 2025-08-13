@@ -1,6 +1,8 @@
 // Right-Aligned Sidebar
 .sb-sidebar-right {
-  @extend .sb-sidebar;
+  // @extend .sb-sidebar;
+  @extend .sb-sidebar !optional;
+
   left: auto;
   right: 0;
   border-left: 1px solid var(--sb-border, #e0e0e0);

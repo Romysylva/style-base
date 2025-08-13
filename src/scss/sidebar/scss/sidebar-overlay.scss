@@ -1,6 +1,8 @@
 // Overlay Sidebar
 .sb-sidebar-overlay {
-  @extend .sb-sidebar;
+  // @extend .sb-sidebar;
+  @extend .sb-sidebar !optional;
+
   position: fixed;
   top: 0;
   left: 0;

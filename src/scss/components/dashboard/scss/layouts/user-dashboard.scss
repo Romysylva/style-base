@@ -1,28 +1,29 @@
 // src/scss/components/_user-dashboard.scss
 
+@use "sass:color";
 // Import theme variables
-@use "../utilities/colors" as *;
-@use "../utilities/spacing" as *;
-@use "../utilities/effects" as *;
+@use "../../../../utilities/colors" as *;
+@use "../../../../utilities/spacing" as *;
+@use "../../../../utilities/effects" as *;
 
 // Dashboard variables
 $sb-surface: #fff;
 $sb-text: #111827;
 $sb-muted: #6b7280;
 $sb-primary: #2563eb;
-$sb-radius: 0.5rem;
+$sb-radii: 0.5rem;
 
 :root {
   --sb-surface: #{$sb-surface};
   --sb-text: #{$sb-text};
   --sb-muted: #{$sb-muted};
   --sb-primary: #{$sb-primary};
-  --sb-radius: #{$sb-radius};
+  --sb-radii: #{$sb-radii};
 }
 
 .sb-topbar {
   background: var(--sb-surface);
-  border-bottom: 1px solid lighten($sb-muted, 45%);
+  border-bottom: 1px solid color.adjust($sb-muted, $lightness: 45%);
   padding: 0.5rem 0;
 
   &-inner {
@@ -59,7 +60,7 @@ $sb-radius: 0.5rem;
 
 .card {
   background: var(--sb-surface);
-  border-radius: var(--sb-radius);
+  border-radius: var(--sb-radii);
   box-shadow: 0 6px 20px rgba(16, 24, 40, 0.04);
   border: 1px solid rgba(15, 23, 42, 0.03);
   overflow: hidden;
@@ -109,7 +110,7 @@ $sb-radius: 0.5rem;
     width: 100%;
     padding: 0.5rem;
     border-radius: 0.375rem;
-    border: 1px solid lighten($sb-muted, 45%);
+    border: 1px solid color.adjust($sb-muted, $lightness: 45%);
     background: $sb-surface;
   }
 }

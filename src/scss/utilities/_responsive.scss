@@ -5,7 +5,7 @@
    to produce responsive variants for a selected subset of utilities.
 */
 
-@import "tokens";
+@use "./tokens" as *;
 
 @each $bp-name, $bp-val in $sb-breakpoints {
   @media (min-width: $bp-val) {

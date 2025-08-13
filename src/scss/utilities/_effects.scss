@@ -1,4 +1,4 @@
-@import "tokens";
+@use "./tokens" as *;
 
 @each $name, $sh in $sb-shadows {
   .sb-shadow-#{$name} {

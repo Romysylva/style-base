@@ -1,6 +1,7 @@
 // Mini Sidebar
 .sb-sidebar-mini {
-  @extend .sb-sidebar;
+  @extend .sb-sidebar !optional;
+  // @extend .sb-sidebar;
   width: 80px;
   overflow: hidden;
 

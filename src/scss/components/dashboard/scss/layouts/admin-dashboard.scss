@@ -1,22 +1,26 @@
 // src/scss/components/_dashboard-layout.scss
 
+// border: 1px solid color.scale($sb-muted, $lightness: 83.4545%);
+
 // Import global variables
-@use "../utilities/colors" as *;
-@use "../utilities/spacing" as *;
-@use "../utilities/effects" as *;
+
+@use "sass:color";
+@use "../../../../utilities/colors" as *;
+@use "../../../../utilities/spacing" as *;
+@use "../../../../utilities/colors" as *;
 
 // Layout variables
 $sb-surface: #fff;
 $sb-text: #111827;
 $sb-primary: #2563eb;
-$sb-radius: 0.5rem;
+$sb-radii: 0.5rem;
 $sb-border-light: #e6eef8;
 
 :root {
   --sb-surface: #{$sb-surface};
   --sb-text: #{$sb-text};
   --sb-primary: #{$sb-primary};
-  --sb-radius: #{$sb-radius};
+  --sb-radii: #{$sb-radii};
 }
 
 body {
@@ -67,7 +71,7 @@ body {
     &.active {
       background: linear-gradient(
         90deg,
-        lighten($sb-primary, 48%),
+        color.adjust($sb-primary, $lightness: 48%),
         $sb-surface
       );
       font-weight: 600;
@@ -91,7 +95,7 @@ body {
   text-align: center;
 
   &-title {
-    color: lighten($sb-text, 40%);
+    color: color.adjust($sb-text, $lightness: 40%);
   }
 
   &-value {
@@ -114,7 +118,7 @@ body {
   th,
   td {
     padding: 0.5rem;
-    border-bottom: 1px solid lighten($sb-border-light, 4%);
+    border-bottom: 1px solid color.adjust($sb-border-light, $lightness: 4%);
     text-align: left;
   }
 }

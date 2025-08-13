@@ -1,22 +1,40 @@
-@import "tokens";
+@use "sass:math";
+@use "sass:string";
+@use "./tokens" as *;
 
 @for $i from 1 through 12 {
   .sb-w-#{$i}\/12 {
-    width: percentage($i / 12) !important;
+    width: calc($i / 12) !important;
   }
   .sb-min-w-#{$i}\/12 {
-    min-width: percentage($i / 12) !important;
+    min-width: calc($i / 12) !important;
   }
   .sb-max-w-#{$i}\/12 {
-    max-width: percentage($i / 12) !important;
+    max-width: calc($i / 12) !important;
   }
 }
 
-@each $n in 0 0.25 0.5 0.75 1 1.25 1.5 2 2.5 3 4 5 6 8 10 12 16 20 24 {
-  .sb-w-#{$n} {
+@function str-replace($string, $search, $replace: "") {
+  $index: string.index($string, $search);
+  @if $index {
+    @return string.slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        string.slice($string, $index + string.length($search)),
+        $search,
+        $replace
+      );
+  }
+  @return $string;
+}
+
+$sizes: 0 0.25 0.5 0.75 1 1.25 1.5 2 2.5 3 4 5 6 8 10 12 16 20 24;
+@each $n in $sizes {
+  $name: str-replace(#{$n}, ".", "-");
+
+  .sb-w-#{$name} {
     width: #{$n}rem !important;
   }
-  .sb-h-#{$n} {
+  .sb-h-#{$name} {
     height: #{$n}rem !important;
   }
 }

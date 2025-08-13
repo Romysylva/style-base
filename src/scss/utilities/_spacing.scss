@@ -1,49 +1,101 @@
-@import "tokens";
+// @use "tokens" as *;
 
-$space-values: 0 0.25 0.5 0.75 1 1.25 1.5 2 2.5 3 4 5 6 8 10 12 16 20 24;
+// $space-values: 0 0.25 0.5 0.75 1 1.25 1.5 2 2.5 3 4 5 6 8 10 12 16 20 24;
 
-@each $step in $space-values {
-  $n: $step;
-  $val: #{$n}rem;
-  .sb-m-#{$n} {
-    margin: #{$val} !important;
-  }
-  .sb-mt-#{$n} {
-    margin-top: #{$val} !important;
-  }
-  .sb-mr-#{$n} {
-    margin-right: #{$val} !important;
-  }
-  .sb-mb-#{$n} {
-    margin-bottom: #{$val} !important;
-  }
-  .sb-ml-#{$n} {
-    margin-left: #{$val} !important;
-  }
+// @each $step in $space-values {
+//   $n: $step;
+//   $val: #{$n}rem;
+//   .sb-m-#{$n} {
+//     margin: #{$val} !important;
+//   }
+//   .sb-mt-#{$n} {
+//     margin-top: #{$val} !important;
+//   }
+//   .sb-mr-#{$n} {
+//     margin-right: #{$val} !important;
+//   }
+//   .sb-mb-#{$n} {
+//     margin-bottom: #{$val} !important;
+//   }
+//   .sb-ml-#{$n} {
+//     margin-left: #{$val} !important;
+//   }
 
-  .sb-p-#{$n} {
-    padding: #{$val} !important;
-  }
-  .sb-pt-#{$n} {
-    padding-top: #{$val} !important;
-  }
-  .sb-pr-#{$n} {
-    padding-right: #{$val} !important;
-  }
-  .sb-pb-#{$n} {
-    padding-bottom: #{$val} !important;
-  }
-  .sb-pl-#{$n} {
-    padding-left: #{$val} !important;
-  }
+//   .sb-p-#{$n} {
+//     padding: #{$val} !important;
+//   }
+//   .sb-pt-#{$n} {
+//     padding-top: #{$val} !important;
+//   }
+//   .sb-pr-#{$n} {
+//     padding-right: #{$val} !important;
+//   }
+//   .sb-pb-#{$n} {
+//     padding-bottom: #{$val} !important;
+//   }
+//   .sb-pl-#{$n} {
+//     padding-left: #{$val} !important;
+//   }
 
-  .sb-gap-#{$n} {
-    gap: #{$val} !important;
+//   .sb-gap-#{$n} {
+//     gap: #{$val} !important;
+//   }
+//   .sb-gap-x-#{$n} {
+//     column-gap: #{$val} !important;
+//   }
+//   .sb-gap-y-#{$n} {
+//     row-gap: #{$val} !important;
+//   }
+// }
+
+// @use "../tokens/tokens" as *; // adjust path if needed
+@use "../../tokens/tokens" as *;
+// // Helper: replace all instances of a string
+// @function str-replace($string, $search, $replace: "") {
+//   $index: str-index($string, $search);
+//   @if $index {
+//     @return str-slice($string, 1, $index - 1) + $replace +
+//       str-replace(
+//         str-slice($string, $index + str-length($search)),
+//         $search,
+//         $replace
+//       );
+//   }
+//   @return $string;
+// }
+
+// // Example spacing values
+// $spacings: (0, 0.25, 0.5, 1, 1.5, 2);
+
+// @each $n in $spacings {
+//   $safe-n: str-replace(#{$n}, ".", "-");
+
+//   .sb-m-#{$safe-n} {
+//     margin: #{$n}rem;
+//   }
+// }
+
+@use "sass:string";
+
+@function str-replace($string, $search, $replace: "") {
+  $index: string.index($string, $search);
+  @if $index {
+    @return string.slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        string.slice($string, $index + string.length($search)),
+        $search,
+        $replace
+      );
   }
-  .sb-gap-x-#{$n} {
-    column-gap: #{$val} !important;
-  }
-  .sb-gap-y-#{$n} {
-    row-gap: #{$val} !important;
+  @return $string;
+}
+
+$sizes: (0, 0.25, 0.5, 0.75, 1);
+
+@each $n in $sizes {
+  $name: str-replace(#{$n}, ".", "-");
+
+  .sb-w-#{$name} {
+    width: #{$n}rem !important;
   }
 }

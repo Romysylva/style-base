@@ -2,6 +2,7 @@
 // SCSS Design Tokens for Style Base
 // Auto-generated from sb.tokens.js
 // ===================================
+
 // Light Theme Colors
 $color-light-surface: #ffffff;
 $color-light-text: #111827;
@@ -50,13 +51,3 @@ $breakpoint-sm: 640px;
 $breakpoint-md: 768px;
 $breakpoint-lg: 1024px;
 $breakpoint-xl: 1280px;
-
-$sb-z: (
-  0: 0,
-  10: 10,
-  20: 20,
-  30: 30,
-  40: 40,
-  50: 50,
-  max: 9999,
-);

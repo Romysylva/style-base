@@ -1,6 +1,6 @@
 // Collapsible Sidebar
 .sb-sidebar-collapsible {
-  @extend .sb-sidebar;
+  @extend .sb-sidebar !optional;
 
   &.sb-collapsed {
     width: 80px;

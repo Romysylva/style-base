@@ -1,69 +1,124 @@
+// @use "./navbar/scss/index.scss";
+// @use "./sidebar/scss/index.scss";
+
+/* 1. Config & Tokens */
+// @import "../tokens/tokens";
+/* 2. Base Styles */
+// @import "./base/accessibility";
+// @import "./base/globals";
+// @import "./base/reset";
+// @import "./base/typography";
+
+// /* 3. Layouts */
+// @import "./layout/grid";
+// @import "./layout/container";
+// @import "./drawer/scss/drawer";
+// @import "./drawer/scss/sidebar";
+
+// /* 4. Components */
+// @import "./components/button";
+// @import "./components/card";
+// @import "./components/modals/src/scss/components/modal";
+// @import "./components/input/src/scss/components/input";
+// @import "./components/input/src/scss/components/toast";
+// @import "./components/loaders/src/scss/components/loaders";
+// @import "./components/dashboard/scss/layouts/admin-dashboard.scss";
+// @import "./components/dashboard/scss/layouts/user-dashboard.scss";
+
+// /* navbar */
+
+// /*6. Utilities */
+
+// @import "./utilities/colors";
+// @import "./utilities/display-position";
+// @import "./utilities/effects";
+// @import "./utilities/flex-grid";
+// @import "./utilities/mics";
+// @import "./utilities/mixins";
+// @import "./utilities/overflow-asspect";
+// @import "./utilities/responsive";
+// @import "./utilities/sizing";
+// @import "./utilities/spacing";
+// @import "./utilities/tokens";
+// @import "./utilities/typography";
+// // @import "./utilities/sb.scss";
+
+// /* 7. Themes */
+
+// @import "./themes/plugins/scss/theme/dark";
+// @import "./themes/plugins/scss/theme/light";
+// @import "./themes/plugins/scss/theme/custom";
+
+// /* 8. Plugins */
+
+// @import "../plugins/animations.scss";
+// @import "../plugins/icons.scss";
+// @import "../plugins/aria.scss";
+// @import "../plugins/forms.scss";
+
 /* ======================================
-   STYLE-BASE MASTER IMPORTER
+   STYLE-BASE MASTER IMPORTER (Sass 3.0+)
    Prefix: sb-
    ====================================== */
 
 /* 1. Config & Tokens */
+// @use "@/scss/tokens/_tokens.scss" as *;
+@use "../tokens/tokens" as *;
 
-@import "../tokens/tokens";
+/* 2. Layout Imports That Must Come Before Rules */
+@use "./navbar/scss/index.scss" as *;
+@use "./sidebar/scss/index.scss" as *;
 
-/* 2. Base Styles */
-@import "./base/accessibility";
-@import "./base/globals";
-@import "./base/reset";
-@import "./base/typography";
+/* 3. Base Styles */
+@use "./base/accessibility" as *;
+@use "./base/globals" as *;
+@use "./base/reset" as *;
+@use "./base/typography" as *;
 
-/* 3. Layouts */
-@import "./layout/grid";
-@import "./layout/container";
-@import "./drawer/scss/drawer";
-@import "./drawer/scss/sidebar";
+/* 4. Layouts */
+@use "./layout/grid" as *;
+@use "./layout/container" as *;
+@use "./drawer/scss/drawer" as *;
+@use "./drawer/scss/sidebar" as *;
 
-/* 4. Components */
-@import "./components/button";
-@import "./components/card";
-@import "./components/modals/src/scss/components/modal";
-@import "./components/input/src/scss/components/input";
-@import "./components/input/src/scss/components/toast";
-@import "./components/loaders/src/scss/components/loaders";
-@import "./components/dashboard/scss/layouts/admin-dashboard.scss";
-@import "./components/dashboard/scss/layouts/user-dashboard.scss";
+/* 5. Components */
+@use "./components/button" as *;
+@use "./components/card" as *;
+@use "./components/modals/src/scss/components/modal" as *;
+@use "./components/input/src/scss/components/input" as *;
+@use "./components/input/src/scss/components/toast" as *;
+@use "./components/loaders/src/scss/components/loaders" as *;
+@use "./components/dashboard/scss/layouts/admin-dashboard.scss" as *;
+@use "./components/dashboard/scss/layouts/user-dashboard.scss" as *;
 
-/* navbar */
-
-@use "./navbar/scss/index.scss";
-
-/* 5. Sidebar */
-@use "./sidebar/scss/index.scss";
-
-/*6. Utilities */
-
-@import "./utilities/colors";
-@import "./utilities/display-position";
-@import "./utilities/effects";
-@import "./utilities/flex-grid";
-@import "./utilities/mics";
-@import "./utilities/mixins";
-@import "./utilities/overflow-asspect";
-@import "./utilities/responsive";
-@import "./utilities/sizing";
-@import "./utilities/spacing";
-@import "./utilities/tokens";
-@import "./utilities/typography";
-@import "./utilities/sb.scss";
+/* 6. Utilities */
+@use "./utilities/colors" as *;
+@use "./utilities/display-position" as *;
+@use "./utilities/effects" as *;
+@use "./utilities/flex-grid" as *;
+@use "./utilities/mics" as *;
+@use "./utilities/mixins" as *;
+@use "./utilities/overflow-asspect" as *;
+@use "./utilities/responsive" as *;
+@use "./utilities/sizing" as *;
+@use "./utilities/spacing" as *;
+@use "./utilities/tokens" as *;
+// @use "./utilities/sb.scss" as *; // If needed, uncomment
 
 /* 7. Themes */
-
-@import "./themes/plugins/scss/theme/dark";
-@import "./themes/plugins/scss/theme/light";
-@import "./themes/plugins/scss/theme/custom";
+@use "./themes/plugins/scss/theme/dark" as *;
+@use "./themes/plugins/scss/theme/light" as *;
+@use "./themes/plugins/scss/theme/custom" as *;
 
 /* 8. Plugins */
+@use "../plugins/animations.scss" as *;
+@use "../plugins/icons.scss" as *;
+@use "../plugins/aria.scss" as *;
+@use "../plugins/forms.scss" as *;
 
-@import "../plugins/animations.scss";
-@import "../plugins/icons.scss";
-@import "../plugins/aria.scss";
-@import "../plugins/forms.scss";
+/* ======================================
+   End of Import
+   ====================================== */
 
 /* ======================================
    End of Import

@@ -5,7 +5,9 @@
   "main": "index.js",
   "style": "index.css",
   "scripts": {
+    "dev": "vite",
     "build": "vite build",
+    "preview": "vite preview",
     "test": "echo 'No tests yet'",
     "prepublishOnly": "npm run build"
   },
@@ -36,7 +38,9 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
+    "cssnano": "^7.1.0",
     "postcss": "^8.4.21",
+    "sass": "^1.90.0",
     "vite": "^7.1.2"
   }
 }

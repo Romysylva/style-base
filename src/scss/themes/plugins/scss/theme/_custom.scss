@@ -1,24 +1,34 @@
 // src/themes/custom-theme.scss
 
 // 1️⃣ Import default tokens
-@use "../tokens/tokens" as *;
+@use "sass:color";
+@use "sass:map";
 @use "../../../../../tokens/tokens" as *;
+@use "../../../../utilities//tokens" as *;
 
 // 2️⃣ Define a SCSS map for theme values (defaults)
+$primary-color: #0070f3; // Sass color for compile-time work
+$sb-primary: $primary-color;
+
+:root {
+  --sb-primary: #{$primary-color};
+}
 $sb-theme: (
-  surface: $sb-surface,
-  text: $sb-text,
-  muted: $sb-muted,
-  primary: $sb-primary,
-  radii: $sb-radii,
+  surface: #ffffff,
+  text: #000000,
+  muted: #888888,
+  primary: --sb-primary,
+  radii: 4px,
 ) !default;
 
+$sb-surface: map.get($sb-theme, surface) !default;
+
 // 3️⃣ Allow user overrides via !default
-$sb-surface: map-get($sb-theme, surface) !default;
-$sb-text: map-get($sb-theme, text) !default;
-$sb-muted: map-get($sb-theme, muted) !default;
-$sb-primary: map-get($sb-theme, primary) !default;
-$sb-radii: map-get($sb-theme, radii) !default;
+$sb-surface: map.get($sb-theme, surface) !default;
+$sb-text: map.get($sb-theme, text) !default;
+$sb-muted: map.get($sb-theme, muted) !default;
+$sb-primary: map.get($sb-theme, primary) !default;
+$sb-radii: map.get($sb-theme, radii) !default;
 
 // 4️⃣ Generate light mode CSS variables
 :root {
@@ -26,7 +36,7 @@ $sb-radii: map-get($sb-theme, radii) !default;
   --sb-text: #{$sb-text};
   --sb-muted: #{$sb-muted};
   --sb-primary: #{$sb-primary};
-  --sb-radii: #{$sb-radii};
+  --sb-radii: #{map.get($sb-radii, default)};
 }
 
 // 5️⃣ Dark mode overrides (can be toggled via .dark-theme class)
@@ -50,7 +60,7 @@ body {
   color: #fff;
 
   &:hover {
-    background-color: lighten(var(--sb-primary), 8%);
+    background-color: color.adjust($primary-color, $lightness: 8%);
   }
 }
 
