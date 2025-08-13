@@ -21,3 +21,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initDrawer();
   initSidebar();
 })
+
+export { default as AdminDashboard } from "./scss/components/dashboard/AdminDashboard"

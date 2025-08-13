@@ -1,9 +1,13 @@
 {
-  "name": "@promise_sylva/style-base",
+  "name": "@stylebase/style-base",
   "version": "1.0.0",
   "description": "A modern, responsive, framework-agnostic UI component and utility library combining Tailwind CSS, MUI, and ShadCN-inspired styles.",
-  "main": "index.js",
-  "style": "index.css",
+  "main": "dist/style-base.cjs.js",
+  "module": "dist/style-base.es.js",
+  "style": "dist/style-base.css",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
